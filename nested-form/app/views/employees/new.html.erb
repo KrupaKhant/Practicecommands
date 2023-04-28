@@ -1,0 +1,37 @@
+<%= form_for(@employee) do |f| %>
+  <br>
+  <br>
+  <div>
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div>
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
+    <div>
+      <%= f.label :phone %>
+      <%= f.text_field :phone %>
+    </div>
+
+    <div>
+      <%= f.fields_for :projects do |t| %>
+      <%= render "project_fields", :f => t %>
+      <% end %>
+
+      
+      <div>
+        <br>
+        <%= link_to_add_association "Add Project", f, :projects %> 
+        
+        
+      </div>
+    </div>
+    
+    <div>
+      <br>
+      <%= f.submit %>
+    </div>
+  </div>
+<% end %>

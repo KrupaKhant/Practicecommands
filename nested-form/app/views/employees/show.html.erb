@@ -1,0 +1,10 @@
+<h4><%= @employee.name %>'s Project's</h4>
+
+<% @projects.each do |project| %>
+  <li><%= project.name %></li>
+  <li><%= project.description %></li>
+  <li><%= project.project_type%></li>
+  <li><%= project.tech%></li>
+  <li><%= project.developer%></li>
+  <li><%= project.project_manager%></li>
+<% end %>
